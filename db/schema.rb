@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326095739) do
+ActiveRecord::Schema.define(version: 20160327123948) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160326095739) do
     t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "pictures"
   end
 
 end

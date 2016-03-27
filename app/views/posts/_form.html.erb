@@ -1,45 +1,50 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= form_for @post, html: { multipart: true } do |f| %>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_area :title %>
     </div>
-  <% end %>
+    <div class="field">
+      <%= f.label :desc %><br>
+      <%= f.text_area :desc %>
+    </div>
+    <div class="field">
+      <%= f.label :img %><br>
+      <%= f.text_area :img %>
+    </div>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_area :title %>
-  </div>
-  <div class="field">
-    <%= f.label :desc %><br>
-    <%= f.text_area :desc %>
-  </div>
-  <div class="field">
-    <%= f.label :img %><br>
-    <%= f.text_area :img %>
-  </div>
-  <div class="field">
-    <%= f.label :target %><br>
-    <%= f.date_select :target %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address, :id => 'geo-input' %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div>
+      <%= f.file_field :pictures, multiple: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :target %><br>
+      <%= f.date_select :target %>
+    </div>
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address, :id => 'geo-input' %>
+    </div>
+    <div class="field">
+      <%= f.label :latitude %><br>
+      <%= f.text_field :latitude %>
+    </div>
+    <div class="field">
+      <%= f.label :longitude %><br>
+      <%= f.text_field :longitude %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

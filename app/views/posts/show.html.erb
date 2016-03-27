@@ -4,10 +4,14 @@
 
 <h3>Nearby locations</h3>
 <!--<ul>-->
-  <!--<% for post in @post.nearbys(10) %>-->
-      <!--<li><%#= link_to post.address, location %> (<%#= post.distance.round(2) %> miles)</li>-->
-  <!--<% end %>-->
+<!--<% for post in @post.nearbys(10) %>-->
+    <!--<li><%#= link_to post.address, location %> (<%#= post.distance.round(2) %> miles)</li>-->
+    <!--<% end %>-->
 <!--</ul>-->
+
+<% @post.pictures.each_with_index do |img, index| %>
+    <%= image_tag img.url %>
+<% end %>
 
 <p>
   <strong>Title:</strong>
