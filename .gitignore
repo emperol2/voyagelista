@@ -19,3 +19,4 @@ workspace.xml
 tasks.xml
 
 /public/uploads/post/pictures/*
+/public/uploads/tmp/*
