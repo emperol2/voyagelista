@@ -27,6 +27,7 @@ gem 'rmagick', :require => 'RMagick'
 gem 'geocoder'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
+gem 'cloudinary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

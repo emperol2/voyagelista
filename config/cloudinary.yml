@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: letustest
+  api_key: '498651856178231'
+  api_secret: wBY7TjW6p8ZRSe08LmfHmXYuRus
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: letustest
+  api_key: '498651856178231'
+  api_secret: wBY7TjW6p8ZRSe08LmfHmXYuRus
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: letustest
+  api_key: '498651856178231'
+  api_secret: wBY7TjW6p8ZRSe08LmfHmXYuRus
+  enhance_image_tag: true
+  static_image_support: false

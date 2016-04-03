@@ -7,24 +7,33 @@
   <div class="profile row">
     <div class="main-img col-xs-12 col-sm-12 col-md-8 col-lg-8">
       <h1><%= @post.title %></h1>
-      <%= image_tag "http://img.dummy-image-generator.com/abstract/dummy-800x600-DesiccationCracks.jpg", class: 'img_preview' %>
+      <%= image_tag @post.pictures[0].url(:hero), class: 'img_preview' %>
 
       <div class="sub-image clearfix">
 
-        <% @post.pictures.each_with_index do |img, index| %>
-            <div class="small-img col-xs-12 col-sm-12 col-md-6 col-lg-4">
-              <%= image_tag img.url(:thumb), class: 'img_preview' %>
-            </div>
+        <% if @post.pictures.size == 3 %>
+            <% @post.pictures.each_with_index do |img, index| %>
+                <div class="small-img col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+                  <%= image_tag img.url(:thumb), class: 'img_preview' %>
+                </div>
+            <% end %>
+        <% elsif @post.pictures.size == 2 %>
+            <% @post.pictures.each_with_index do |img, index| %>
+                <div class="small-img col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <%= image_tag img.url(:thumb), class: 'img_preview' %>
+                </div>
+            <% end %>
         <% end %>
 
         <!--<div class="small-img col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
-        <!--<%= image_tag "http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview' %>-->
+        <!--<%#= image_tag "http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview' %>-->
         <!--</div>-->
         <!--<div class="small-img col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
-        <!--<%= image_tag "http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview' %>-->
+        <!--<%#= image_tag "http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview' %>-->
         <!--</div>-->
         <!--<div class="small-img col-xs-12 col-sm-12 col-md-4 col-lg-4">-->
-        <!--<%= image_tag "http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview' %>-->
+        <!--<%#= image_tag "http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview' %>-->
         <!--</div>-->
 
       </div>
@@ -56,11 +65,8 @@
 
       </div>
 
-
-      <%= link_to 'Edit', edit_post_path(@post) %> |
-      <%= link_to 'Back', posts_path %>
-
-
+      <%#= link_to 'Edit', edit_post_path(@post) %>
+      <%#= link_to 'Back', posts_path %>
 
     </div>
 
