@@ -20,16 +20,33 @@
           </div>
 
           <div class="form-group">
-            <% @post_attachments.each do |img| %>
+            <% if action_name == 'new' %>
                 <%= f.fields_for :post_attachments do |p| %>
                     <div class="field">
                       <%= p.label :photo, "Photo" %><br/>
-                      <%= img.photo_url %><span> >> </span>
-                      <%= link_to "Edit", edit_post_attachment_path(img) %>
+                      <%= p.file_field :pictures, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
+                    </div>
+                <% end %>
+            <% elsif action_name == 'edit' %>
+                <% @post_attachments.each do |img| %>
+                    <%= f.fields_for :post_attachments do |p| %>
+                        <div class="field">
+                          <%= p.label :photo, "Photo" %><br/>
+                          <%= img.photo_url %><span> >> </span>
+                          <%= link_to "Edit", edit_post_attachment_path(img) %>
+                          <%= p.file_field :pictures, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
+                        </div>
+                    <% end %>
+                <% end %>
+            <% else %>
+                <%= f.fields_for :post_attachments do |p| %>
+                    <div class="field">
+                      <%= p.label :photo, "Photo" %><br/>
                       <%= p.file_field :pictures, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
                     </div>
                 <% end %>
             <% end %>
+
           </div>
 
           <!--<div class="form-group">-->

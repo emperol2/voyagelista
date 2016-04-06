@@ -1,11 +1,12 @@
 class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-   include CarrierWave::RMagick
+   #include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include Cloudinary::CarrierWave
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  #storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -35,14 +36,16 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-    #process :eager => true
+    process :eager => true
     process :resize_to_fill => [400, 300]
+    cloudinary_transformation :quality => 100
     #process :quality => 100
   end
 
   version :hero do
-    #process :eager => true
+    process :eager => true
     process :resize_to_fit => [800, 600]
+    cloudinary_transformation :quality => 100
     #process :quality => 100
   end
 
