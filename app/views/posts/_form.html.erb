@@ -24,7 +24,7 @@
                 <%= f.fields_for :post_attachments do |p| %>
                     <div class="field">
                       <%= p.label :photo, "Photo" %><br/>
-                      <%= p.file_field :pictures, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
+                      <%= p.file_field :photo, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
                     </div>
                 <% end %>
             <% elsif action_name == 'edit' %>
@@ -34,7 +34,7 @@
                           <%= p.label :photo, "Photo" %><br/>
                           <%= img.photo_url %><span> >> </span>
                           <%= link_to "Edit", edit_post_attachment_path(img) %>
-                          <%= p.file_field :pictures, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
+                          <%= p.file_field :photo, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
                         </div>
                     <% end %>
                 <% end %>
@@ -42,7 +42,7 @@
                 <%= f.fields_for :post_attachments do |p| %>
                     <div class="field">
                       <%= p.label :photo, "Photo" %><br/>
-                      <%= p.file_field :pictures, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
+                      <%= p.file_field :photo, :multiple => true, name: "post_attachments[photo][]", class: 'form-control' %>
                     </div>
                 <% end %>
             <% end %>

@@ -28,7 +28,6 @@ gem 'geocoder'
 gem 'bootstrap-sass', '~> 3.3.5'
 #gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'cloudinary'
-
 gem 'carrierwave'
 gem 'font-awesome-sass', '~> 4.5.0'
 
@@ -56,5 +55,5 @@ end
 
 group :production do
   gem 'pg'
-  #gem 'rails_12factor'
+  gem 'rails_12factor'
 end
