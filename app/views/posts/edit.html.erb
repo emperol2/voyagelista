@@ -5,6 +5,8 @@
 <div class="container">
   <div class="row">
     <div class="heading col-xs-12 col-sm-12 col-md-8"><h1>Editing Post</h1></div>
+    <div class="heading col-xs-12 col-sm-12 col-md-8"><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></div>
+
   </div>
 </div>
 <%= render 'form' %>
