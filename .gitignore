@@ -20,3 +20,4 @@ tasks.xml
 
 /public/uploads/post/pictures/*
 /public/uploads/tmp/*
+public/uploads/*

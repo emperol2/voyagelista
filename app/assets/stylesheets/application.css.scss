@@ -16,6 +16,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 html {
   position: relative;
@@ -27,7 +29,8 @@ html {
 }
 
 .post-box {
-  padding-bottom: 60px;
+  #padding-bottom: 60px;
+  padding-bottom: 10px;
 }
 
 .navbar-brand {
@@ -151,9 +154,10 @@ span.glyphicon{
 .desc {
   font-size: 16px;
   //font-weight: 500;
+  padding-bottom: 15px;
 }
 
-.location, .target, .user {
+.location, .target, .user, .status {
   font-size: 13px;
 }
 
@@ -285,7 +289,7 @@ span.glyphicon{
 }
 
 .one {
-  background-image: url('http://placehold.it/350x150');
+  background-image: url('https://scontent.fbkk1-2.fna.fbcdn.net/hphotos-xlf1/v/l/t1.0-9/12813927_10204341211890014_7541025584744409262_n.jpg?oh=55ef6440f3ca78982b03e1d3d0933ad9&oe=578B4119');
 }
 
 .profile-box {
@@ -329,4 +333,24 @@ body {
   margin: 0 auto -50px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
+}
+
+.show-button {
+  padding-top: 15px;
+
+  .btn-info {
+    color: white;
+    a:visited {
+      color: white;
+    }
+    .fa {
+      padding-right: 5px;
+    }
+  }
+
+}
+
+.status > .fa {
+  padding: 5px 10px 5px 5px;
+  font-size: 15px;
 }

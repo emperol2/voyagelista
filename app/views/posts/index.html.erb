@@ -16,10 +16,10 @@
                 <div class="post-header"><%= link_to post.title, post %></div>
                 <div class="imgthumb img-responsive">
                   <%#= link_to image_tag("http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview'), post %>
-                  <% if post.pictures[0].nil? %>
+                  <% if post.post_attachments.nil? %>
                       <%= link_to image_tag("http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview'), post %>
                   <% else %>
-                      <%= link_to image_tag(post.pictures[0].url(:hero), class: 'img_preview'), post %>
+                      <%= link_to image_tag(post.post_attachments[0].photo_url(:thumb), class: 'img_preview'), post %>
                   <% end %>
                   <!--<img class="img_preview" src="http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg">-->
                 </div>
@@ -29,10 +29,14 @@
                   <div class="location"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><%= post.address %></div>
                   <div class="target"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= post.target %></div>
                   <div class="user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Nuttapon P.</div>
+                  <div class="status"><span class="fa fa-lock"></span></div>
 
                   <!--<a href="#" class="btn btn-default btn-xs pull-right" role="button"><i class="glyphicon glyphicon-edit"></i></a>-->
                   <!--<a href="#" class="btn btn-info btn-xs" role="button">Button</a>-->
-                  <a href="#" class="btn btn-default btn-md pull-right" role="button">Share</a>
+                  <div class="show-button">
+                    <a href="#" class="btn btn-info btn-md pull-left" role="button"><i class="fa fa-unlock-alt"></i> Unlock</a>
+                    <a href="#" class="btn btn-default btn-md pull-right" role="button">Share</a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -7,21 +7,22 @@
   <div class="profile row">
     <div class="main-img col-xs-12 col-sm-12 col-md-8 col-lg-8">
       <h1><%= @post.title %></h1>
-      <%= image_tag @post.pictures[0].url(:hero), class: 'img_preview' %>
+      <%#= @post.post_attachments.size %>
+      <%= image_tag @post_attachments[0].photo_url(:hero), class: 'img_preview' %>
 
       <div class="sub-image clearfix">
 
-        <% if @post.pictures.size == 3 %>
-            <% @post.pictures.each_with_index do |img, index| %>
+        <% if @post_attachments.size == 3 %>
+            <% @post_attachments.each_with_index do |img, index| %>
                 <div class="small-img col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
-                  <%= image_tag img.url(:thumb), class: 'img_preview' %>
+                  <%= image_tag img.photo_url(:thumb), class: 'img_preview' %>
                 </div>
             <% end %>
-        <% elsif @post.pictures.size == 2 %>
-            <% @post.pictures.each_with_index do |img, index| %>
+        <% elsif @post_attachments.size == 2 %>
+            <% @post_attachments.each_with_index do |img, index| %>
                 <div class="small-img col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <%= image_tag img.url(:thumb), class: 'img_preview' %>
+                  <%= image_tag img.photo_url(:thumb), class: 'img_preview' %>
                 </div>
             <% end %>
         <% end %>
