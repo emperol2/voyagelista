@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 // require turbolinks
-//= require jquery.geocomplete
+// require jquery.geocomplete
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(function() {
-    $("#geo-input").geocomplete();
-});
+//$(function() {
+//    $("#geo-input").geocomplete();
+//});

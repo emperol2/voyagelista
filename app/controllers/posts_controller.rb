@@ -29,17 +29,21 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    respond_to do |format|
-      if @post.save
-        params[:post_attachments]['photo'].each do |a|
-          #@post_attachment = @post.post_attachments.create!(:photo => a)
-          @post_attachment = @post.post_attachments.create!(:photo => a, :post_id => @post.id)
+    if params[:post_attachments] == nil
+      render :new
+    else
+      respond_to do |format|
+        if @post.save
+          params[:post_attachments]['photo'].each do |a|
+            #@post_attachment = @post.post_attachments.create!(:photo => a)
+            @post_attachment = @post.post_attachments.create(:photo => a, :post_id => @post.id)
+          end
+          format.html { redirect_to @post, notice: 'Post was successfully created.' }
+          format.json { render :show, status: :created, location: @post }
+        else
+          format.html { render :new }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
         end
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
