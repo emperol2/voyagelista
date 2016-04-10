@@ -178,7 +178,7 @@ span.glyphicon{
 }
 
 .location, .target, .user, .status {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .footer {
@@ -380,10 +380,23 @@ body {
   color: white;
 }
 
-.btn-danger {
+a.btn-danger {
   color: white;
 }
 
 input, select, textarea {
   font-size: 16px !important;
+}
+
+.post-header > a {
+  line-height: 22px;
+}
+
+
+.profile-usertitle-about {
+  #text-transform: uppercase;
+  color: rgba(44, 43, 43, 0.62);
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
