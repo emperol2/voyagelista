@@ -15,6 +15,7 @@
 // require turbolinks
 // require jquery.geocomplete
 //= require bootstrap-sprockets
+//= require social-share-button
 //= require_tree .
 
 //$(function() {

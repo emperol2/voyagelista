@@ -30,6 +30,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'font-awesome-sass', '~> 4.5.0'
+gem 'social-share-button', '~> 0.1.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
