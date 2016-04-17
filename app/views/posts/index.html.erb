@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="featured col-xs-12">
-        <div class="achieve pull-left"><%= pluralize(@posts.size, 'locked achievement') %></div>
+        <div class="achieve pull-left"><%= pluralize(@all_posts.size, 'locked achievement') %></div>
         <div class="will_paginate pull-right"><%= will_paginate @posts %></div>
       </div>
 
