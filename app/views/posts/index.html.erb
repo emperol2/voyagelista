@@ -7,7 +7,11 @@
 
   <div class="container">
     <div class="row">
-      <div class="featured col-xs-12"><%= pluralize(@posts.size, 'locked achievement') %></div>
+      <div class="featured col-xs-12">
+        <div class="achieve pull-left"><%= pluralize(@posts.size, 'locked achievement') %></div>
+        <div class="will_paginate pull-right"><%= will_paginate @posts %></div>
+      </div>
+
       <div class="post-wrapper">
         <% @posts.each do |post| %>
             <div class="post-box col-xs-12 col-sm-6 col-md-4">
@@ -19,7 +23,7 @@
                   <% if post.post_attachments.nil? %>
                       <%= link_to image_tag("http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview'), post %>
                   <% else %>
-                      <%= link_to image_tag(post.post_attachments[0].photo_url(:thumb), class: 'img_preview'), post %>
+                      <%= link_to image_tag(post.post_attachments[0].photo_url(:hero), class: 'img_preview'), post %>
                   <% end %>
                   <!--<img class="img_preview" src="http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg">-->
                 </div>

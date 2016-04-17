@@ -49,6 +49,13 @@ class PhotoUploader < CarrierWave::Uploader::Base
     #process :quality => 100
   end
 
+  version :large do
+    process :eager => true
+    process :resize_to_fit => [1920, 1080]
+    cloudinary_transformation :quality => 100
+    #process :quality => 100
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_whitelist
