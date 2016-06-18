@@ -7,16 +7,19 @@
 
   <div class="container">
     <div class="row">
-      <div class="featured col-xs-12">
+      <div class="featured col-xs-12 clearfix">
         <div class="achieve pull-left"><%= pluralize(@all_posts.size, ' achievement') %></div>
         <div class="will_paginate pull-right"><%= will_paginate @posts %></div>
       </div>
+    </div>
+
+    <div class="row pinterest">
 
       <div class="post-wrapper">
         <% @posts.each do |post| %>
-            <div class="post-box col-xs-12 col-sm-6 col-md-4">
+            <!--<div class="post-box item">-->
 
-              <div class="productbox">
+              <div class="productbox well item">
                 <div class="post-header"><%= link_to post.title, post %></div>
                 <div class="imgthumb img-responsive">
                   <%#= link_to image_tag("http://img.dummy-image-generator.com/abstract/dummy-400x300-DesiccationCracks.jpg", class: 'img_preview'), post %>
@@ -73,7 +76,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            <!-- /div -->
         <% end %>
       </div>
     </div>

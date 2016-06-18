@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404163303) do
+ActiveRecord::Schema.define(version: 20160508080327) do
+
+  create_table "blogs", force: :cascade do |t|
+    t.text     "title"
+    t.text     "desc"
+    t.text     "tags"
+    t.text     "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "post_attachments", force: :cascade do |t|
     t.integer  "post_id"
